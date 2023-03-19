@@ -1,0 +1,49 @@
+<h2>Rams</h2>
+
+<div>
+  <label>New ram model number: </label>
+  <input #modelNumber />
+  <label>New ram brand name: </label>
+  <input #brandName />
+  <label>New ram clock speed: </label>
+  <input #clockSpeed />
+  <button (click)="createRam(modelNumber.value, brandName.value, clockSpeed.value); modelNumber.value=''; brandName.value=''; clockSpeed.value=''">
+    Create
+  </button>
+</div>
+
+<h2>Ram showroom</h2>
+<ul class="rams">
+  <li *ngFor="let ram of rams">
+    <span>{{ram.modelNumber}} - {{ram.brandName}} - {{ram.clockSpeed}}</span>
+    <button class="delete" (click)="deleteRam(ram)">x</button>
+    <button class="edit" (click)="updateRam(ram)">Edit</button>
+    <div *ngIf="selectedRam === ram">
+      <label>Model Number:</label>
+      <input [(ngModel)]="selectedRam.modelNumber" name="modelNumber"/>
+      <label>Brand Name:</label>
+      <input [(ngModel)]="selectedRam.brandName" name="brandName"/>
+      <label>Clock Speed:</label>
+      <input [(ngModel)]="selectedRam.clockSpeed" name="clockSpeed"/>
+      <button (click)="updateSelectedRam()">Save</button>
+      <button (click)="selectedRam = null">Cancel</button>
+    </div>
+  </li>
+</ul>
+
+<input #searchInput placeholder="Search by ID">
+<button (click)="searchRam(searchInput.value)">Search</button>
+
+<form *ngIf="editingRam" (ngSubmit)="onEditSubmit()">
+  <label>Model Number:</label>
+  <input [(ngModel)]="editingRam.modelNumber" name="modelNumber">
+  <label>Brand Name:</label>
+  <input [(ngModel)]="editingRam.brandName" name="brandName">
+  <label>Clock Speed:</label>
+  <input [(ngModel)]="editingRam.clockSpeed" name="clockSpeed">
+  <button type="submit">Save</button>
+</form>
+
+
+
+
