@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Student} from "./student";
+import {Laptop} from "./laptop";
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,9 +7,15 @@ import {Student} from "./student";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  students : Student[] = [
-    new Student("akmal", 10, "galle"),
-    new Student("bkmal", 11, "matara"),
-    new Student("ekmal", 12, "kataragama")
-  ];
+  message : string = 'hello';
+  constructor() {
+    console.log('the constructor')
+  }
+
+  laptops : Laptop[] = [
+    new Laptop("akmal", 23, true),
+    new Laptop("kmal", 16, false),
+    new Laptop("mal", 18, true),
+    new Laptop("al", 25, false)
+  ]
 }

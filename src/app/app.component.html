@@ -1,26 +1,23 @@
+<input [(ngModel)] = "message">
+
+<p>{{message}}</p>
 
 
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>age</th>
-      <th>address</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let student of students">
-      <a [title]="'touch'">
-        <td>{{student.name}}</td>
-      </a>
-      <td>{{student.age}}</td>
-      <td>{{student.address}}</td>
-    </tr>
-  </tbody>
-</table>
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th>Name:</th>-->
+<!--      <th>Age:</th>-->
+<!--      <th>IsValid:</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--    <tr *ngFor="let laptop of laptops">-->
+<!--      <td>{{laptop.name}}</td>-->
+<!--      <td>{{laptop.age}}</td>-->
+<!--      <td>{{laptop.isYoung}}</td>-->
+<!--    </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
 
-
-
-
-<!--<app-sidebar></app-sidebar>-->
-<!--<router-outlet></router-outlet>-->
+<router-outlet></router-outlet>
